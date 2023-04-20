@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_apitos_questions",
+  "info": {
+    "displayName": "question",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "questionTitle": {
+      "type": "string"
+    },
+    "Options": {
+      "type": "component",
+      "repeatable": true,
+      "component": "apitos.question-options"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_apitos_question_options",
+  "info": {
+    "displayName": "questionOptions"
+  },
+  "options": {},
+  "attributes": {
+    "questionText": {
+      "type": "string"
+    },
+    "questionDescription": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "isDefault": {
+      "type": "boolean"
+    }
+  }
+}

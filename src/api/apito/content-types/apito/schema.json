@@ -1,0 +1,85 @@
+{
+  "kind": "singleType",
+  "collectionName": "apitos",
+  "info": {
+    "singularName": "apito",
+    "pluralName": "apitos",
+    "displayName": "apito",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "herotitle": {
+      "type": "text"
+    },
+    "heroDescription": {
+      "type": "richtext"
+    },
+    "questions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "apitos.question"
+    },
+    "heroImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "heroImgText": {
+      "type": "text"
+    },
+    "wizardStepsTitle": {
+      "type": "string"
+    },
+    "wizardSteps1Title": {
+      "type": "string"
+    },
+    "wizardSteps1Description": {
+      "type": "text"
+    },
+    "wizardSteps2Title": {
+      "type": "string"
+    },
+    "wizardSteps2Description": {
+      "type": "text"
+    },
+    "wizardSteps3Title": {
+      "type": "string"
+    },
+    "wizardSteps3Description": {
+      "type": "text"
+    },
+    "factWizardTitle": {
+      "type": "string"
+    },
+    "defaultConditionUsePolicyTitle": {
+      "type": "text"
+    },
+    "defaultConditionUsePolicyDescription": {
+      "type": "richtext"
+    },
+    "defaultConditionChangePolicyTitle": {
+      "type": "string"
+    },
+    "defaultConditionChangePolicyDescription": {
+      "type": "richtext"
+    },
+    "defaultConditionAgreeText": {
+      "type": "text"
+    },
+    "licenseSectionThankyouText": {
+      "type": "string"
+    },
+    "footerText": {
+      "type": "text"
+    }
+  }
+}
