@@ -85,6 +85,156 @@ module.exports = {
         continued: false,
       });
 
+      doc.moveDown()
+      doc.moveDown()
+      doc.font('Helvetica-Bold').fontSize(23).fillColor('black').text('2 Definition',{fontWeight: 'bold'})
+      doc.moveDown()
+      doc.font('Helvetica').fontSize(11).text(`Particular attention has been paid to using a wording that remains accessible and easy to understand, notably for non-lawyers. Nonetheless, the document uses a specific legal vocabulary that must be referred to in this type of document.`,{align:'justify'})
+      doc.moveDown()
+      doc.list(pdfData.definitionList,{indent:20,align:'justify',lineGap:2})
+
+      doc.moveDown()
+      doc.moveDown()
+      doc.font('Helvetica-Bold').fontSize(23).fillColor('black').text(`3 Core API Provider's Commitments`,{fontWeight: 'bold'})
+      doc.moveDown()
+      doc.font('Helvetica-Bold').fontSize(17).fillColor('black').text('3.1 Neutrality',{fontWeight: 'bold'})
+      doc.moveDown()
+      doc.font('Helvetica').fontSize(11).text(`The Core API Provider understands the importance of providing a neutral infrastructure and commits to being entirely neutral in delivering its services. The Core API Provider will avoid any behaviour that could favour or disadvantage some users (whether organisations or individuals) or fields based on non-objective criteria.
+      `,{align:'justify'})
+      doc.font('Helvetica').fontSize(11).text(`Although FACT encourages an Open API approach, there may be some objective restrictions that the Core API Provider needs to impose: 
+      `,{align:'justify'})
+
+      doc.moveDown()
+      doc.list([`Developer access rights. Technical access conditions for developers (identification keys in particular), when present, are detailed in Annexe A (link to user or developer ToS and dedicated documentation).`],{indent:20,align:'justify',lineGap:2})
+
+      doc.moveDown()
+      doc.font('Helvetica-Bold').fontSize(14).fillColor('black').text('3.1.1 Restrictive rights (option)',{fontWeight: 'bold'})
+      doc.moveDown()
+      doc.font('Helvetica').fontSize(11).list([`Actors and fields access rights: If there are objective criteria that discriminate against certain users or fields, such as research actors, the precise conditions are listed in Annexe A (actors and fields restriction).`],{indent:20,align:'justify',lineGap:2})
+
+      doc.moveDown()
+      doc.font('Helvetica-Bold').fontSize(14).fillColor('black').text('3.1.2 ShareAlike licence on API Access (option)',{fontWeight: 'bold'})
+      doc.moveDown()
+      doc.font('Helvetica').fontSize(11).list([`API Access - Share Alike: The API User is required to maintain the FACT Contract for any API Users’ Products or API Users’ Services provided to their End Users, as described in Article 4.4.`],{indent:20,align:'justify',lineGap:2})
+      doc.moveDown()
+      doc.font('Helvetica').fontSize(11).text(`The Core API Provider agrees not to impose, any, other restrictions on the access and use of its API.`,{align:'justify'})
+      
+      
+      doc.moveDown()
+      doc.font('Helvetica-Bold').fontSize(17).fillColor('black').text('3.2 API Access and grant of rights',{fontWeight: 'bold'})
+      doc.moveDown()
+      doc.font('Helvetica').fontSize(11).text(pdfData.apiAccessAndGrantOfRights,{align:'justify'})
+
+      doc.moveDown()
+      doc.fontSize(11).list([`(i) to Develop API Users' Products (to “Develop” meaning – in this Article and elsewhere in this Contract – to design, develop, make or have made, and/or produce or have produced API Users' Products in accordance with the API Specification);`],{indent:20,align:'justify',lineGap:2})
+      doc.moveDown()
+      doc.fontSize(11).list([`(ii) and to Exploit API Users' Products in one or more of the way(s) defined as follows (hereunder collectively referred to as the “Exploitation” of the API Users' Products or to “Exploit” API Users' Products): `],{indent:20,align:'justify',lineGap:2})
+
+      doc.moveDown()
+      doc.fontSize(11).list([`a) to Internally Use API Users' Products; (to “Internally Use” meaning – in this Article and elsewhere in this Contract – to install, use and deploy the API Users' Products and to make them available to the API Users' personnel, for use internally by the API Users for the purpose of general business practices but not to offer API Users' Services or for Distribution purposes; `,`b) and to Offer API Users' Services to End Users; `,`c) and to Distribute API Users' Products to End Users;`],{indent:40,align:'justify',lineGap:5})
+
+      doc.moveDown()
+      doc.addPage()
+      doc.font('Helvetica-Bold').fontSize(17).fillColor('black').text('3.3 API Technical Specification Access',{fontWeight: 'bold'})
+      doc.moveDown()
+
+
+      doc.fontSize(14).fillColor('black').text('3.3.1 Continuous access (Source of truth for Interoperability)',{fontWeight: 'bold'})
+      doc.moveDown()
+
+      doc.font('Helvetica').fontSize(11).text(pdfData.continuosAccess,{align:'justify'})
+      doc.moveDown()
+      doc.font('Helvetica-Bold').fontSize(14).fillColor('black').text('3.3.2 Modifications',{fontWeight: 'bold'})
+      doc.moveDown()
+      doc.font('Helvetica').fontSize(11).text(pdfData.modifications,{align:'justify'})
+      doc.moveDown()
+      doc.font('Helvetica-Bold').fontSize(14).fillColor('black').text('3.3.3 Specification Contract',{fontWeight: 'bold'})
+      doc.moveDown()
+      doc.font('Helvetica').fontSize(11).text(pdfData.specificationContract,{align:'justify'})
+
+      doc.moveDown()
+      doc.font('Helvetica-Bold').fontSize(14).fillColor('black').text('3.3.4 CC Zero Licence on specification (by default)',{fontWeight: 'bold'})
+      doc.moveDown()
+      doc.font('Helvetica').fontSize(11).text(`The Core API Provider applies a CC Zero Licence to the Specification (see `,{align:'justify',continued: true}).fillColor('blue').text(`https://creativecommons.org/publicdomain/zero/1.0/legalcode `,{
+        link: 'https://creativecommons.org/publicdomain/zero/1.0/legalcode ',
+        continued:true
+
+      })
+      doc.fillColor('black').text(`for the full text of the licence)`)
+
+
+      doc.moveDown()
+      doc.font('Helvetica-Bold').fontSize(14).fillColor('black').text('3.3.5 ShareAlike licence on specification (Option)',{fontWeight: 'bold'})
+      doc.moveDown()
+      doc.font('Helvetica').fontSize(11).text(`The Core API Provider could apply a Creative Commons Attribution-ShareAlike 4.0 International Licence to the API Specification (see `,{align:'justify',continued: true}).fillColor('blue').text(`https://creativecommons.org/licenses/by-sa/4.0/legalcode `,{
+        link: 'https://creativecommons.org/licenses/by-sa/4.0/legalcode ',
+        continued:true
+
+      })
+      doc.fillColor('black').text(`for the full text of the Licence).`)
+
+      doc.moveDown()
+      doc.addPage()
+      doc.font('Helvetica-Bold').fontSize(17).fillColor('black').text('3.4 Loyal change policy',{fontWeight: 'bold'})
+      doc.moveDown()
+
+      doc.font('Helvetica-Bold').fontSize(14).fillColor('black').text('3.4.1 Purpose',{fontWeight: 'bold'})
+      doc.moveDown()
+      doc.font('Helvetica').fontSize(11).text(pdfData.purpose,{align:'justify'})
+
+      doc.moveDown()
+
+      doc.font('Helvetica-Bold').fontSize(14).fillColor('black').text('3.4.2 Technical modifications of the API',{fontWeight: 'bold'})
+      doc.moveDown()
+      doc.font('Helvetica').fontSize(11).text('The Core API Provider commits to:',{align:'justify'})
+      doc.moveDown()
+      doc.fontSize(11).list([pdfData.technicalModificationsList],{indent:20,align:'justify',lineGap:2})
+      doc.moveDown()
+      doc.font('Helvetica').fontSize(11).text('In exceptional cases, the Core API Provider may modify the API to solve security or continuous access issues. In these situations, it will make sure to maintain optimal API compatibility and inform API Users as soon as possible.',{align:'justify'})
+
+
+      doc.moveDown()
+      doc.font('Helvetica-Bold').fontSize(14).fillColor('black').text('3.4.3 Contractual modifications',{fontWeight: 'bold'})
+      doc.moveDown()
+      doc.font('Helvetica').fontSize(11).text([pdfData.contractualModifications],{align:'justify'})
+
+      doc.moveDown()
+      doc.font('Helvetica-Bold').fontSize(17).fillColor('black').text('3.5 Ethical Data policy',{fontWeight: 'bold'})
+      doc.moveDown()
+      doc.font('Helvetica-Bold').fontSize(13).fillColor('black').text('3.5.1 Data Policy',{fontWeight: 'bold'})
+      doc.moveDown()
+      doc.font('Helvetica-Bold').fontSize(12).fillColor('black').text('3.5.1.1 GPDR Policy',{fontWeight: 'bold'})
+      doc.moveDown()
+      doc.font('Helvetica').fontSize(11).text(pdfData.gdprPolicy,{align:'justify'})
+
+      doc.moveDown()
+      doc.font('Helvetica-Bold').fontSize(12).fillColor('black').text('3.5.1.2 Data licence',{fontWeight: 'bold'})
+      doc.moveDown()
+      doc.font('Helvetica').fontSize(11).text(pdfData.dataLicence,{align:'justify'})
+
+      doc.moveDown()
+      doc.font('Helvetica-Bold').fontSize(11).fillColor('gray').text('3.5.1.2.1 Open data licence (option)',{fontWeight: 'bold'})
+      doc.moveDown()
+      doc.font('Helvetica').fillColor('black').fontSize(11).text(`The Core API Provider should combine the Contract together with another licence for the Databases and their contents. In case of multiple sets of different rights, the Core API Provider must specify which rights apply to which contents on the API contractual commitment summary (Annex A).`,{align:'justify'})
+
+      doc.moveDown()
+      doc.addPage()
+      doc.font('Helvetica-Bold').fontSize(11).fillColor('gray').text('3.5.1.2.2 Commercial data (option)',{fontWeight: 'bold'})
+      doc.moveDown()
+      doc.font('Helvetica').fontSize(11).fillColor('black').text(`The reuse of the Database and its contents is subject to compliance with a dedicated commercial licence, which is reproduced in Annex A. Therefore, API Users must comply with this commercial licence before any Distribution of the database or its contents, whether directly or through the Exploitation of API Users' Products.`,{align:'justify'})
+
+
+      doc.moveDown()
+      doc.font('Helvetica-Bold').fontSize(17).fillColor('black').text('3.6 Loyal Output Policy',{fontWeight: 'bold'})
+      doc.moveDown()
+      doc.font('Helvetica').fontSize(11).text(`The Core API Provider does not make any claims regarding API Users' Products (subject to the conditions of use of the database as specified above) as long as the API User complies with the commitments set out in Article 4 of the contract.
+
+      The User API must refrain from engaging in any behaviour that is directly competitive with the Core API Provider, as mentioned in Article 4.4`,{align:'justify'})
+
+      
+
+
+      
       ctx.set('Content-Type', 'application/pdf');
       ctx.set('Content-Disposition', 'attachment; filename="archivo.pdf"');
       doc.pipe(ctx.res);
