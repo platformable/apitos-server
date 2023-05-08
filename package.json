@@ -16,6 +16,7 @@
     "@strapi/strapi": "4.9.1",
     "better-sqlite3": "8.0.1",
     "pdfkit": "^0.13.0",
+    "pdfkit-table": "^0.1.99",
     "pg": "^8.10.0"
   },
   "author": {

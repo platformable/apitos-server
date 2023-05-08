@@ -28,7 +28,7 @@ module.exports = {
     
     This Contract may be sufficient on its own as a minimum set of requirements in a situation where access is open to all, without financial compensation. Used independent permits as described below: access to the API by anyone, grants a free licence for the API specification, allows for free reuse of the data only within the context of using the API  (by either the API Users or their end-users), does not impose limitation on outputs, and requires minimum attributions.
     `,
-    definitionList:['Core API Provider” means the Provider of the API licensed under this Contract.',
+    definitionList:[`Core API Provider” means the Provider of the API licensed under this Contract.`,
     `“API User” means any individual or legal entity exercising rights under this Contract, API Users irrevocably accept this Contract and all of its terms and conditions by exercising any rights granted by the Contract such as the use of the API, the Development or Exploitation of API Users' Products or Services.`,
     `“API Specification” means the documentation containing the technical description of the API provided by the Core API Provider under this Contract.`,
     `“API Users' Product” means any data set, computer file, computer program, or any electronic hardware device, or any combination of these, which implements the API Specification to communicate with the API, or which creates, writes, reads or displays files in accordance with the API Specification and in a way that would infringe on the licensed Intellectual Property if the API Users did not benefit from the licence grant provided in this Contract under Article 3.2.`,
