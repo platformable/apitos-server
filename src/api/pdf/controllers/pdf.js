@@ -259,9 +259,110 @@ module.exports = {
 
       The User API must refrain from engaging in any behaviour that is directly competitive with the Core API Provider, as mentioned in Article 4.4`,{align:'justify'})
 
+      ////*************************************** */
+      ////4
+      doc.moveDown(2)
+      doc.fontSize(23).font('Helvetica-Bold').text("4 API Users' Commitments",)
+      doc.moveDown()
+      //4.1
+      doc.fontSize(17).font('Helvetica-Bold').text('4.1 Strict implementation & implementation of the last Technical Specification',)
+      doc.moveDown(0.5)
+      doc.font('Helvetica').fontSize(11).text(pdfData['4.1'],{align:'justify'})
+      doc.moveDown()
+      //4.2
+      doc.fontSize(17).font('Helvetica-Bold').text('4.2 FAIR use',)
+      doc.moveDown(0.5)
+      doc.font('Helvetica').fontSize(11).text(pdfData[`The API User agrees to take responsibility for ensuring that their API Users' Products :`],{align:'justify'})
+      doc.moveDown()
+      doc.list(pdfData['4.2 list'],doc.x + 20, doc.y, {align:'justify'})
+      doc.moveDown()
+      doc.font('Helvetica').fontSize(11).text(pdfData['4.2'],doc.x - 20, doc.y,{align:'justify'})
+      doc.moveDown()
+      //4.3
+      doc.fontSize(17).font('Helvetica-Bold').text('4.3 API Attribution – References to the Core API Provider',)
+      doc.moveDown()
+      //4.3.1
+      doc.fontSize(14).font('Helvetica-Bold').text('4.3.1 Attribution requirements',)
+      doc.moveDown(0.5)
+      doc.font('Helvetica').fontSize(11).text(pdfData['4.3'][1].description,{})
+      doc.moveDown()
+     //  doc.list([pdfData['4.3'][1][1].slice(0, 23).concat(pdfData['4.3'][1][1].slice(23)), pdfData['4.3'][1][2]], {listType: 'numbered'})
+       doc.font('Helvetica').text('1.  ',doc.x + 20, doc.y, {continued: true, indent: -10}).font('Helvetica-Bold').fontSize(11).text(pdfData['4.3'][1][1].slice(0, 23),{continued: true}).font('Helvetica').text(pdfData['4.3'][1][1].slice(23), )
+      doc.font('Helvetica').text('2.  ', {continued: true, indent: -10}).font('Helvetica-Bold').fontSize(11).text(pdfData['4.3'][1][2].slice(0, 65),{continued: true}).font('Helvetica').text(pdfData['4.3'][1][2].slice(65), )
+      doc.moveDown()
+      //4.3.2
+      doc.fontSize(14).font('Helvetica-Bold').text('4.3.2 No attribution (option)',doc.x - 20, doc.y,)
+      doc.moveDown(0.5)
+      doc.font('Helvetica').fontSize(11).text(pdfData['4.3'][2].slice(0,125),{continued: true}).font('Helvetica-Bold').text(pdfData['4.3'][2].slice(125, 213), ).font('Helvetica').text(pdfData['4.3'][2].slice(213), {align: 'justify'})
+      doc.moveDown()
+      //4.3.3
+      doc.fontSize(14).font('Helvetica-Bold').text('4.3.3 Trademark enforcement (option)',)
+      doc.moveDown(0.5)
+      doc.font('Helvetica').fontSize(11).text(pdfData['4.3'][3],{})
+      doc.moveDown()
+      //4.4
+      doc.fontSize(17).font('Helvetica-Bold').text('4.4 Non-direct competition [Loyal Output Policy +]',)
+      doc.moveDown(0.5)
+      doc.font('Helvetica').fontSize(11).text(pdfData['4.4'],{})
+      doc.moveDown()
+      //4.5
+      doc.fontSize(17).font('Helvetica-Bold').text('4.5 Share alike  [API Access +]',)
+      doc.moveDown(0.5)
+      doc.font('Helvetica').fontSize(11).text(pdfData['4.5'],{align: 'justify'})
+      doc.moveDown(2)
+
+      //5
+      doc.fontSize(23).font('Helvetica-Bold').text("5 Liability and Warranties")
+      doc.moveDown(0.5)
+      //5.1
+      doc.fontSize(17).font('Helvetica-Bold').text('5.1 Limitation on Liability ',)
+      doc.moveDown(0.5)
+      doc.fontSize(11).font('Helvetica').text(pdfData['5.1'], {align: 'justify'})
+      doc.moveDown()
+      //5.2
+      doc.fontSize(17).font('Helvetica-Bold').text('5.2 Jurisdiction ',)
+      doc.moveDown(0.5)
+      doc.fontSize(11).font('Helvetica').text(pdfData['5.2'], )
+      doc.moveDown()
+      //5.3
+      doc.fontSize(17).font('Helvetica-Bold').text('5.3 Applicable Law ',)
+      doc.moveDown(0.5)
+      doc.fontSize(11).font('Helvetica').text(pdfData['5.3'].slice(0, 188), {continued: true}).font('Helvetica-Bold').text(pdfData['5.3'].slice(188, 216), {continued: true}).font('Helvetica').text(pdfData['5.3'].slice(216))
+      doc.moveDown()
+      //5.4
+      doc.fontSize(17).font('Helvetica-Bold').text('5.4 Disclaimer of warranty ',)
+      doc.moveDown(0.5)
+      doc.fontSize(11).font('Helvetica').text(pdfData['5.4'].slice(0, 673), {align:'justify', continued: true}).font("Helvetica-Bold").text(pdfData['5.4'].slice(673, 774), {continued: true}).font("Helvetica").text(pdfData['5.4'].slice(774))
+      doc.moveDown()
+      //5.5
+      doc.fontSize(17).font('Helvetica-Bold').text('5.5 Term & Termination of the Contract',)
+      doc.moveDown(0.5)
+      doc.fontSize(11).font('Helvetica').text(pdfData['5.5'], {align:'justify'})
+      doc.moveDown()
+      //5.6
+      doc.fontSize(17).font('Helvetica-Bold').text('5.6 Validity',)
+      doc.moveDown(0.5)
+      doc.fontSize(11).font('Helvetica').text(pdfData['5.6'], {align:'justify'})
+      doc.moveDown(2)
+
+      //6
+      doc.fontSize(23).font('Helvetica-Bold').text("6 Annex")
+      doc.moveDown()
+      //6.1
+      doc.fontSize(17).font('Helvetica-Bold').text('6.1 Annexe A: API contractual commitments summary ',{fontWeight: 'bold'})
+      doc.moveDown(0.5)
+      doc.fontSize(11).font('Helvetica').text(pdfData['6.1'], {align:'justify'})
+      doc.moveDown()
+      // Table
+      doc.table(table)
+
+      //6.2
+      doc.fontSize(17).font('Helvetica-Bold').text('6.2 Annexe B: How to Apply These Terms to Your product? ',{fontWeight: 'bold'})
+      doc.moveDown(0.5)
+      doc.fontSize(11).font('Helvetica').text(pdfData['6.2'], {align:'justify'})
+      doc.moveDown()
       doc.moveDown()
       
-      doc.table(table)
 
       
       ctx.set('Content-Type', 'application/pdf');
