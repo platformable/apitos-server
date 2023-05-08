@@ -7760,7 +7760,14 @@
   "resolved" "https://registry.npmjs.org/pause/-/pause-0.0.1.tgz"
   "version" "0.0.1"
 
-"pdfkit@^0.13.0":
+"pdfkit-table@^0.1.99":
+  "integrity" "sha512-BaunFJ7cvKqIPONzX9FXUpeC/3iJeLo0v2nVNjCccAxdMXKvDMBjxyF4wZhKOYlmP+nYZcikf9ByVJeCzjNK6g=="
+  "resolved" "https://registry.npmjs.org/pdfkit-table/-/pdfkit-table-0.1.99.tgz"
+  "version" "0.1.99"
+  dependencies:
+    "pdfkit" "latest"
+
+"pdfkit@^0.13.0", "pdfkit@latest":
   "integrity" "sha512-AW79eHU5eLd2vgRDS9z3bSoi0FA+gYm+100LLosrQQMLUzOBGVOhG7ABcMFpJu7Bpg+MT74XYHi4k9EuU/9EZw=="
   "resolved" "https://registry.npmjs.org/pdfkit/-/pdfkit-0.13.0.tgz"
   "version" "0.13.0"

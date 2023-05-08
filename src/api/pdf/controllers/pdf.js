@@ -1,14 +1,34 @@
 'use strict';
-const PDFDocument = require('pdfkit');
+//const PDFDocument = require('pdfkit');
 const pdfData = require('./pdfData')
-
+const PDFDocument = require("pdfkit-table");
 
 const pdfTitle = 'FACT Licence'
 const pdtSubtitle = 'Your API Terms are Fair, Transparent and Trustworthy. It’s a FACT.'
 /**
  * A set of functions called "actions" for `pdf`
  */
+const table = {
+  title: "",
+  subtitle: "",
+  headers: [ "Title", "URI", "Short Description" ],
+  rows: [
+    [ `
+    `,  `
+    `,  `
+    ` ],
+    [ `
+    `,  `
+    `,  `
+    ` ],
 
+    [ `
+    `,  `
+    `,  `
+    ` ],
+
+  ],
+};
 module.exports = {
   createPdf: async (ctx, next) => {
     try {
@@ -20,15 +40,21 @@ module.exports = {
       doc.font('Helvetica-Bold').fontSize(26).text(pdfData.pdfTitle);
       doc.fontSize(16).fillColor('gray').text(pdfData.pdtSubtitle);
       doc.moveDown()
-      //Subtitle
+
+
+      
+      //Subtitle‚
       doc.fontSize(23).fillColor('black').text('0 Intro',{fontWeight: 'bold'})
+
       doc.moveDown()
       //SectionTitle
       doc.fontSize(17).fillColor('black').text('0.1 Abstract',{fontWeight: 'bold'})
+      doc.moveDown(0.5)
       //paragraph
       doc.font('Helvetica').fontSize(11).text(pdfData.abstractText,{align:'justify'})
-      doc.moveDown()
+      doc.moveDown(0.5)
       doc.font('Helvetica-Bold').fontSize(17).fillColor('black').text('0.2 Legal notice & Disclaimer',{fontWeight: 'bold'})
+      doc.moveDown(0.5)
       doc.font('Helvetica').fontSize(11).text(pdfData.legalAndDisclaimer,{align:'justify'})
       
       /* const text = 'This is some sample text'; // sample text
@@ -62,9 +88,11 @@ module.exports = {
       doc.font('Helvetica-Bold').fontSize(23).fillColor('black').text('1 Preamble',{fontWeight: 'bold'})
       doc.moveDown()
       doc.fontSize(17).fillColor('black').text('1.1 Origin of the project',{fontWeight: 'bold'})
+      doc.moveDown(0.5)
       doc.font('Helvetica').fontSize(11).text(pdfData.originOfProjectText,{align:'justify'})
       doc.moveDown()
       doc.font('Helvetica-Bold').fontSize(17).fillColor('black').text('1.2 Our Goals',{fontWeight: 'bold'})
+      doc.moveDown(0.5)
       doc.font('Helvetica').fontSize(11).text(pdfData.ourGoals,{align:'justify'})
       doc.moveDown()
       doc.font('Helvetica-Bold').fontSize(17).fillColor('black').text('1.3 Mutual commitment and full agreement',{fontWeight: 'bold'})
@@ -98,7 +126,7 @@ module.exports = {
       doc.font('Helvetica-Bold').fontSize(23).fillColor('black').text(`3 Core API Provider's Commitments`,{fontWeight: 'bold'})
       doc.moveDown()
       doc.font('Helvetica-Bold').fontSize(17).fillColor('black').text('3.1 Neutrality',{fontWeight: 'bold'})
-      doc.moveDown()
+      doc.moveDown(0.5)
       doc.font('Helvetica').fontSize(11).text(`The Core API Provider understands the importance of providing a neutral infrastructure and commits to being entirely neutral in delivering its services. The Core API Provider will avoid any behaviour that could favour or disadvantage some users (whether organisations or individuals) or fields based on non-objective criteria.
       `,{align:'justify'})
       doc.font('Helvetica').fontSize(11).text(`Although FACT encourages an Open API approach, there may be some objective restrictions that the Core API Provider needs to impose: 
@@ -325,13 +353,16 @@ module.exports = {
       doc.moveDown(0.5)
       doc.fontSize(11).font('Helvetica').text(pdfData['6.1'], {align:'justify'})
       doc.moveDown()
-// Table
+      // Table
+      doc.table(table)
 
       //6.2
       doc.fontSize(17).font('Helvetica-Bold').text('6.2 Annexe B: How to Apply These Terms to Your product? ',{fontWeight: 'bold'})
       doc.moveDown(0.5)
       doc.fontSize(11).font('Helvetica').text(pdfData['6.2'], {align:'justify'})
       doc.moveDown()
+      doc.moveDown()
+      
 
       
       ctx.set('Content-Type', 'application/pdf');
