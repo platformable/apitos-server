@@ -41,10 +41,11 @@ module.exports = {
       
       const doc = new PDFDocument();
 
-      const apiAccess=ctx.params.options[1]
-      const apiSpicification=ctx.params.options[2]
-      const loyalOutput=ctx.params.options[3]
-      const referenceAttribution=ctx.params.options[4]
+      const options=ctx.params.options.split('_')
+      const apiAccess=options[1]
+      const apiSpicification=options[2]
+      const loyalOutput=options[3]
+      const referenceAttribution=options[4]
 
       
       //Titulo 
