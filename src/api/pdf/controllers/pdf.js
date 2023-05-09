@@ -11,7 +11,7 @@ const pdtSubtitle = 'Your API Terms are Fair, Transparent and Trustworthy. It’
 const table = {
   title: "",
   subtitle: "",
-  headers: [ "Title", "URI", "Short Description" ],
+  headers: [ "Title", "URL", "Short Description" ],
   rows: [
     [ `
     `,  `
