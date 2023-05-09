@@ -332,7 +332,7 @@ module.exports = {
       //5.4
       doc.fontSize(17).font('Helvetica-Bold').text('5.4 Disclaimer of warranty ',)
       doc.moveDown(0.5)
-      doc.fontSize(11).font('Helvetica').text(pdfData['5.4'].slice(0, 673), {align:'justify', continued: true}).font("Helvetica-Bold").text(pdfData['5.4'].slice(673, 774), {continued: true}).font("Helvetica").text(pdfData['5.4'].slice(774))
+      doc.fontSize(11).font('Helvetica').text(pdfData['5.4'].slice(0, 674), {align:'justify', continued: true}).font("Helvetica-Bold").text(pdfData['5.4'].slice(674, 761), {continued: true}).font("Helvetica").text(pdfData['5.4'].slice(761))
       doc.moveDown()
       //5.5
       doc.fontSize(17).font('Helvetica-Bold').text('5.5 Term & Termination of the Contract',)
