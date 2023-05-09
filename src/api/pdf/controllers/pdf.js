@@ -346,6 +346,7 @@ module.exports = {
       doc.moveDown(2)
 
       //6
+      doc.addPage()
       doc.fontSize(23).font('Helvetica-Bold').text("6 Annex")
       doc.moveDown()
       //6.1
