@@ -126,7 +126,7 @@ If any provision of the Contract is invalid or unenforceable under the applicabl
 
 This Contract is personal to the API User and is not assignable in whole or in part by the API User without the prior written consent of the Core API Provider.
 `,
-6.1: `The Core API Provider list is required to provide a comprehensive list of all the contractual commitments that may be imposed on an API User in this specific context, as described within the Contract. In addition, other links may be included to ensure the API User have access to complete information  (such as scripta manent, TOSDR, etc.). The API User s obligated to review and comply with all of these documents.`,
+6.1: `The Core API Provider list is required to provide a comprehensive list of all the contractual commitments that may be imposed on an API User in this specific context, as described within the Contract. In addition, other links may be included to ensure the API User have access to complete information  (such as scripta manent, TOSDR, etc.). The API User is obligated to review and comply with all of these documents.`,
 6.2: `If you are using FACT for your API product, it is mandatory to include a link to this version of FACT on your website, typically as a link called yourapidomain.com/legal/fact. 
 
 For any other use, you should include a FACT-License.md file that references the entire Contract along with your product. 
