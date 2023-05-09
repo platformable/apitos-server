@@ -44,8 +44,9 @@ module.exports = {
       const options=ctx.params.options.split('_')
       const apiAccess=options[1]
       const apiSpicification=options[2]
-      const loyalOutput=options[3]
-      const referenceAttribution=options[4]
+      const ethicalData = options[3]
+      const loyalOutput=options[4]
+      const referenceAttribution=options[5]
 
       
       //Titulo 
@@ -141,7 +142,7 @@ module.exports = {
       doc.font('Helvetica-Bold').fontSize(23).fillColor('black').text(`3 Core API Provider's Commitments`,{fontWeight: 'bold'})
       
       //3.1
-    if(apiAccess==='3.1') {
+    if(apiAccess==='11') {
       doc.moveDown()
       doc.font('Helvetica-Bold').fontSize(17).fillColor('black').text('3.1 Neutrality',{fontWeight: 'bold'})
       doc.moveDown(0.5)
@@ -155,7 +156,7 @@ module.exports = {
     
 
       //3.1.1
-      if(apiAccess==='3.1.1'){
+      if(apiAccess==='12'){
         doc.moveDown()
         doc.font('Helvetica-Bold').fontSize(14).fillColor('black').text('3.1.1 Restrictive rights (option)',{fontWeight: 'bold'})
         doc.moveDown()
@@ -164,7 +165,7 @@ module.exports = {
       
 
       //3.1.2
-      if(apiAccess==='3.1.2'){
+      if(apiAccess==='13'){
       doc.moveDown()
       doc.font('Helvetica-Bold').fontSize(14).fillColor('black').text('3.1.2 ShareAlike licence on API Access (option)',{fontWeight: 'bold'})
       doc.moveDown()
@@ -212,7 +213,7 @@ module.exports = {
       doc.font('Helvetica').fontSize(11).text(pdfData.specificationContract,{align:'justify'})
 
       //3.3.4
-      if(apiSpicification==='3.3.4'){
+      if(apiSpicification==='21'){
       doc.moveDown()
       doc.font('Helvetica-Bold').fontSize(14).fillColor('black').text('3.3.4 CC Zero Licence on specification (by default)',{fontWeight: 'bold'})
       doc.moveDown()
@@ -225,7 +226,7 @@ module.exports = {
     } else {null}
 
 //3.3.5
-if(apiSpicification==='3.3.5'){
+if(apiSpicification==='22'){
       doc.moveDown()
       doc.font('Helvetica-Bold').fontSize(14).fillColor('black').text('3.3.5 ShareAlike licence on specification (Option)',{fontWeight: 'bold'})
       doc.moveDown()
@@ -281,7 +282,7 @@ if(apiSpicification==='3.3.5'){
       doc.font('Helvetica').fontSize(11).text(pdfData.gdprPolicy,{align:'justify'})
 
       //3.5.1.2
-      if(ethicalData==='3.5.1.2'){
+      if(ethicalData==='31'){
         doc.moveDown()
         doc.font('Helvetica-Bold').fontSize(12).fillColor('black').text('3.5.1.2 Data licence',{fontWeight: 'bold'})
         doc.moveDown()
@@ -290,7 +291,7 @@ if(apiSpicification==='3.3.5'){
      
 
       //3.5.1.2.1
-      if(ethicalData==='3.5.1.2.1'){
+      if(ethicalData==='32'){
       doc.moveDown()
       doc.font('Helvetica-Bold').fontSize(11).fillColor('gray').text('3.5.1.2.1 Open data licence (option)',{fontWeight: 'bold'})
       doc.moveDown()
@@ -299,8 +300,8 @@ if(apiSpicification==='3.3.5'){
 
       //3.5.1.2.2
       doc.moveDown()
-      doc.addPage()
-      if(ethicalData==='3.5.1.2.2'){
+      // doc.addPage()
+      if(ethicalData==='33'){
       doc.font('Helvetica-Bold').fontSize(11).fillColor('gray').text('3.5.1.2.2 Commercial data (option)',{fontWeight: 'bold'})
       doc.moveDown()
       doc.font('Helvetica').fontSize(11).fillColor('black').text(`The reuse of the Database and its contents is subject to compliance with a dedicated commercial licence, which is reproduced in Annex A. Therefore, API Users must comply with this commercial licence before any Distribution of the database or its contents, whether directly or through the Exploitation of API Users' Products.`,{align:'justify'})
@@ -332,34 +333,38 @@ if(apiSpicification==='3.3.5'){
       doc.list(pdfData['4.2 list'],doc.x + 20, doc.y, {align:'justify'})
       doc.moveDown()
       doc.font('Helvetica').fontSize(11).text(pdfData['4.2'],doc.x - 20, doc.y,{align:'justify'})
-      doc.moveDown()
+      doc.moveDown(1.5)
       //4.3
       doc.fontSize(17).font('Helvetica-Bold').text('4.3 API Attribution – References to the Core API Provider',)
-      doc.moveDown()
+      doc.moveDown(0.5)
       //4.3.1
-      if(referenceAttribution==='4.3.1'){
+      if(referenceAttribution==='51'){
         doc.fontSize(14).font('Helvetica-Bold').text('4.3.1 Attribution requirements',)
         doc.moveDown(0.5)
         doc.font('Helvetica').fontSize(11).text(pdfData['4.3'][1].description,{})
         doc.moveDown()
          doc.font('Helvetica').text('1.  ',doc.x + 20, doc.y, {continued: true, indent: -10}).font('Helvetica-Bold').fontSize(11).text(pdfData['4.3'][1][1].slice(0, 23),{continued: true}).font('Helvetica').text(pdfData['4.3'][1][1].slice(23), )
         doc.font('Helvetica').text('2.  ', {continued: true, indent: -10}).font('Helvetica-Bold').fontSize(11).text(pdfData['4.3'][1][2].slice(0, 65),{continued: true}).font('Helvetica').text(pdfData['4.3'][1][2].slice(65), )
+        doc.moveDown()
+      
       } else {null}
-      doc.moveDown()
       //4.3.2
-      if(referenceAttribution==='4.3.2'){
-        doc.fontSize(14).font('Helvetica-Bold').text('4.3.2 No attribution (option)',doc.x - 20, doc.y,)
+      if(referenceAttribution==='52'){
+        doc.fontSize(14).font('Helvetica-Bold').text('4.3.2 No attribution (option)',)
         doc.moveDown(0.5)
         doc.font('Helvetica').fontSize(11).text(pdfData['4.3'][2].slice(0,125),{continued: true}).font('Helvetica-Bold').text(pdfData['4.3'][2].slice(125, 213), ).font('Helvetica').text(pdfData['4.3'][2].slice(213), {align: 'justify'})
+        doc.moveDown()
+      
       } else {null}
-      doc.moveDown()
       //4.3.3
+     if (referenceAttribution === '53') {
       doc.fontSize(14).font('Helvetica-Bold').text('4.3.3 Trademark enforcement (option)',)
       doc.moveDown(0.5)
       doc.font('Helvetica').fontSize(11).text(pdfData['4.3'][3],{})
       doc.moveDown()
+     } else {null}
       //4.4
-      if(loyalOutput===false){
+      if(loyalOutput==='42'){
 
         doc.fontSize(17).font('Helvetica-Bold').text('4.4 Non-direct competition [Loyal Output Policy +]',)
         doc.moveDown(0.5)
