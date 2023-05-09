@@ -190,7 +190,7 @@ module.exports = {
 
       //3.3
       doc.moveDown()
-      doc.addPage()
+      //doc.addPage()
       doc.font('Helvetica-Bold').fontSize(17).fillColor('black').text('3.3 API Technical Specification Access',{fontWeight: 'bold'})
       doc.moveDown()
 
