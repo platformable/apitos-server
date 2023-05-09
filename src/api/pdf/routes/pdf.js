@@ -12,5 +12,17 @@ module.exports = {
       auth:false
   }
     },
+    {
+      method: 'GET',
+      path: '/pdf/:options',
+      handler: 'pdf.createPdf',
+     //  config: {
+     //    policies: [],
+     //    middlewares: [],
+     //  },
+     config:{
+       auth:false
+   }
+     },
   ],
 };

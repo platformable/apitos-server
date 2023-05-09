@@ -36,9 +36,15 @@ module.exports = {
   createPdf: async (ctx, next) => {
     try {
       // ctx.body = 'ok';
+
+      console.log('ctx.params',ctx.params.options)
       
       const doc = new PDFDocument();
 
+      const apiAccess=ctx.params.options[1]
+      const apiSpicification=ctx.params.options[2]
+      const loyalOutput=ctx.params.options[3]
+      const referenceAttribution=ctx.params.options[4]
 
       
       //Titulo 
@@ -134,6 +140,7 @@ module.exports = {
       doc.font('Helvetica-Bold').fontSize(23).fillColor('black').text(`3 Core API Provider's Commitments`,{fontWeight: 'bold'})
       
       //3.1
+    if(apiAccess==='3.1') {
       doc.moveDown()
       doc.font('Helvetica-Bold').fontSize(17).fillColor('black').text('3.1 Neutrality',{fontWeight: 'bold'})
       doc.moveDown(0.5)
@@ -141,24 +148,29 @@ module.exports = {
       `,{align:'justify'})
       doc.font('Helvetica').fontSize(11).text(`Although FACT encourages an Open API approach, there may be some objective restrictions that the Core API Provider needs to impose: 
       `,{align:'justify'})
-
       doc.moveDown()
       doc.list([`Developer access rights. Technical access conditions for developers (identification keys in particular), when present, are detailed in Annexe A (link to user or developer ToS and dedicated documentation).`],{indent:20,align:'justify',lineGap:2})
+    } else {null}
+    
 
       //3.1.1
-      doc.moveDown()
-      doc.font('Helvetica-Bold').fontSize(14).fillColor('black').text('3.1.1 Restrictive rights (option)',{fontWeight: 'bold'})
-      doc.moveDown()
-      doc.font('Helvetica').fontSize(11).list([`Actors and fields access rights: If there are objective criteria that discriminate against certain users or fields, such as research actors, the precise conditions are listed in Annexe A (actors and fields restriction).`],{indent:20,align:'justify',lineGap:2})
+      if(apiAccess==='3.1.1'){
+        doc.moveDown()
+        doc.font('Helvetica-Bold').fontSize(14).fillColor('black').text('3.1.1 Restrictive rights (option)',{fontWeight: 'bold'})
+        doc.moveDown()
+        doc.font('Helvetica').fontSize(11).list([`Actors and fields access rights: If there are objective criteria that discriminate against certain users or fields, such as research actors, the precise conditions are listed in Annexe A (actors and fields restriction).`],{indent:20,align:'justify',lineGap:2})
+      } else {null}
+      
 
       //3.1.2
+      if(apiAccess==='3.1.2'){
       doc.moveDown()
       doc.font('Helvetica-Bold').fontSize(14).fillColor('black').text('3.1.2 ShareAlike licence on API Access (option)',{fontWeight: 'bold'})
       doc.moveDown()
       doc.font('Helvetica').fontSize(11).list([`API Access - Share Alike: The API User is required to maintain the FACT Contract for any API Users’ Products or API Users’ Services provided to their End Users, as described in Article 4.4.`],{indent:20,align:'justify',lineGap:2})
       doc.moveDown()
       doc.font('Helvetica').fontSize(11).text(`The Core API Provider agrees not to impose, any, other restrictions on the access and use of its API.`,{align:'justify'})
-      
+    } else {null}
       
       //3.2
       doc.moveDown()
@@ -199,6 +211,7 @@ module.exports = {
       doc.font('Helvetica').fontSize(11).text(pdfData.specificationContract,{align:'justify'})
 
       //3.3.4
+      if(apiSpicification==='3.3.4'){
       doc.moveDown()
       doc.font('Helvetica-Bold').fontSize(14).fillColor('black').text('3.3.4 CC Zero Licence on specification (by default)',{fontWeight: 'bold'})
       doc.moveDown()
@@ -208,8 +221,10 @@ module.exports = {
 
       })
       doc.fillColor('black').text(`for the full text of the licence)`)
+    } else {null}
 
 //3.3.5
+if(apiSpicification==='3.3.5'){
       doc.moveDown()
       doc.font('Helvetica-Bold').fontSize(14).fillColor('black').text('3.3.5 ShareAlike licence on specification (Option)',{fontWeight: 'bold'})
       doc.moveDown()
@@ -221,6 +236,8 @@ module.exports = {
       doc.fillColor('black').text(`for the full text of the Licence).`)
 
       doc.moveDown()
+    }else {null}
+
       doc.addPage()
       //3.4
       doc.font('Helvetica-Bold').fontSize(17).fillColor('black').text('3.4 Loyal change policy',{fontWeight: 'bold'})
@@ -248,38 +265,45 @@ module.exports = {
       doc.font('Helvetica').fontSize(11).text([pdfData.contractualModifications],{align:'justify'})
 
 
-      //3.4.5
+      //3.5
       doc.moveDown()
       doc.font('Helvetica-Bold').fontSize(17).fillColor('black').text('3.5 Ethical Data policy',{fontWeight: 'bold'})
       
-      //3.4.5.1
+      //3.5.1
       doc.moveDown()
       doc.font('Helvetica-Bold').fontSize(13).fillColor('black').text('3.5.1 Data Policy',{fontWeight: 'bold'})
       
-      //3.4.5.1.1
+      //3.5.1.1
       doc.moveDown()
       doc.font('Helvetica-Bold').fontSize(12).fillColor('black').text('3.5.1.1 GPDR Policy',{fontWeight: 'bold'})
       doc.moveDown()
       doc.font('Helvetica').fontSize(11).text(pdfData.gdprPolicy,{align:'justify'})
 
-      //3.4.5.1.2
-      doc.moveDown()
-      doc.font('Helvetica-Bold').fontSize(12).fillColor('black').text('3.5.1.2 Data licence',{fontWeight: 'bold'})
-      doc.moveDown()
-      doc.font('Helvetica').fontSize(11).text(pdfData.dataLicence,{align:'justify'})
+      //3.5.1.2
+      if(ethicalData==='3.5.1.2'){
+        doc.moveDown()
+        doc.font('Helvetica-Bold').fontSize(12).fillColor('black').text('3.5.1.2 Data licence',{fontWeight: 'bold'})
+        doc.moveDown()
+        doc.font('Helvetica').fontSize(11).text(pdfData.dataLicence,{align:'justify'})
+      } else {null}
+     
 
-      //3.4.5.1.2.1
+      //3.5.1.2.1
+      if(ethicalData==='3.5.1.2.1'){
       doc.moveDown()
       doc.font('Helvetica-Bold').fontSize(11).fillColor('gray').text('3.5.1.2.1 Open data licence (option)',{fontWeight: 'bold'})
       doc.moveDown()
       doc.font('Helvetica').fillColor('black').fontSize(11).text(`The Core API Provider should combine the Contract together with another licence for the Databases and their contents. In case of multiple sets of different rights, the Core API Provider must specify which rights apply to which contents on the API contractual commitment summary (Annex A).`,{align:'justify'})
+    } else {null}
 
-      //3.4.5.1.2.2
+      //3.5.1.2.2
       doc.moveDown()
       doc.addPage()
+      if(ethicalData==='3.5.1.2.2'){
       doc.font('Helvetica-Bold').fontSize(11).fillColor('gray').text('3.5.1.2.2 Commercial data (option)',{fontWeight: 'bold'})
       doc.moveDown()
       doc.font('Helvetica').fontSize(11).fillColor('black').text(`The reuse of the Database and its contents is subject to compliance with a dedicated commercial licence, which is reproduced in Annex A. Therefore, API Users must comply with this commercial licence before any Distribution of the database or its contents, whether directly or through the Exploitation of API Users' Products.`,{align:'justify'})
+    } else {null}
 
       //3.6
       doc.moveDown()
@@ -312,18 +336,21 @@ module.exports = {
       doc.fontSize(17).font('Helvetica-Bold').text('4.3 API Attribution – References to the Core API Provider',)
       doc.moveDown()
       //4.3.1
-      doc.fontSize(14).font('Helvetica-Bold').text('4.3.1 Attribution requirements',)
-      doc.moveDown(0.5)
-      doc.font('Helvetica').fontSize(11).text(pdfData['4.3'][1].description,{})
-      doc.moveDown()
-     //  doc.list([pdfData['4.3'][1][1].slice(0, 23).concat(pdfData['4.3'][1][1].slice(23)), pdfData['4.3'][1][2]], {listType: 'numbered'})
-       doc.font('Helvetica').text('1.  ',doc.x + 20, doc.y, {continued: true, indent: -10}).font('Helvetica-Bold').fontSize(11).text(pdfData['4.3'][1][1].slice(0, 23),{continued: true}).font('Helvetica').text(pdfData['4.3'][1][1].slice(23), )
-      doc.font('Helvetica').text('2.  ', {continued: true, indent: -10}).font('Helvetica-Bold').fontSize(11).text(pdfData['4.3'][1][2].slice(0, 65),{continued: true}).font('Helvetica').text(pdfData['4.3'][1][2].slice(65), )
+      if(referenceAttribution==='4.3.1'){
+        doc.fontSize(14).font('Helvetica-Bold').text('4.3.1 Attribution requirements',)
+        doc.moveDown(0.5)
+        doc.font('Helvetica').fontSize(11).text(pdfData['4.3'][1].description,{})
+        doc.moveDown()
+         doc.font('Helvetica').text('1.  ',doc.x + 20, doc.y, {continued: true, indent: -10}).font('Helvetica-Bold').fontSize(11).text(pdfData['4.3'][1][1].slice(0, 23),{continued: true}).font('Helvetica').text(pdfData['4.3'][1][1].slice(23), )
+        doc.font('Helvetica').text('2.  ', {continued: true, indent: -10}).font('Helvetica-Bold').fontSize(11).text(pdfData['4.3'][1][2].slice(0, 65),{continued: true}).font('Helvetica').text(pdfData['4.3'][1][2].slice(65), )
+      } else {null}
       doc.moveDown()
       //4.3.2
-      doc.fontSize(14).font('Helvetica-Bold').text('4.3.2 No attribution (option)',doc.x - 20, doc.y,)
-      doc.moveDown(0.5)
-      doc.font('Helvetica').fontSize(11).text(pdfData['4.3'][2].slice(0,125),{continued: true}).font('Helvetica-Bold').text(pdfData['4.3'][2].slice(125, 213), ).font('Helvetica').text(pdfData['4.3'][2].slice(213), {align: 'justify'})
+      if(referenceAttribution==='4.3.2'){
+        doc.fontSize(14).font('Helvetica-Bold').text('4.3.2 No attribution (option)',doc.x - 20, doc.y,)
+        doc.moveDown(0.5)
+        doc.font('Helvetica').fontSize(11).text(pdfData['4.3'][2].slice(0,125),{continued: true}).font('Helvetica-Bold').text(pdfData['4.3'][2].slice(125, 213), ).font('Helvetica').text(pdfData['4.3'][2].slice(213), {align: 'justify'})
+      } else {null}
       doc.moveDown()
       //4.3.3
       doc.fontSize(14).font('Helvetica-Bold').text('4.3.3 Trademark enforcement (option)',)
@@ -331,10 +358,13 @@ module.exports = {
       doc.font('Helvetica').fontSize(11).text(pdfData['4.3'][3],{})
       doc.moveDown()
       //4.4
-      doc.fontSize(17).font('Helvetica-Bold').text('4.4 Non-direct competition [Loyal Output Policy +]',)
-      doc.moveDown(0.5)
-      doc.font('Helvetica').fontSize(11).text(pdfData['4.4'],{})
-      doc.moveDown()
+      if(loyalOutput===false){
+
+        doc.fontSize(17).font('Helvetica-Bold').text('4.4 Non-direct competition [Loyal Output Policy +]',)
+        doc.moveDown(0.5)
+        doc.font('Helvetica').fontSize(11).text(pdfData['4.4'],{})
+        doc.moveDown()
+      } else {null}
       //4.5
       doc.fontSize(17).font('Helvetica-Bold').text('4.5 Share alike  [API Access +]',)
       doc.moveDown(0.5)
